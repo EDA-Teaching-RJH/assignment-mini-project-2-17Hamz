@@ -1,0 +1,18 @@
+import re 
+
+class Patient:
+    def __init__(self,first_name, last_name, DOB, blood_type, phone_number):
+        first_name, last_name, DOB, blood_type, phone_number = first_name.strip(), last_name.strip(), DOB.strip().upper(), blood_type.strip(), phone_number.strip()
+        valid_date = re.fullmatch(r"[1-31]/[1-12]/[1-2026]", DOB) #Validating the date of birth.
+        valid_blood_type = re.fullmatch(r"A+|A-|B+|B-|O+|O-|AB+|AB-", blood_type) # Validating the blood type 
+        if not(valid_date):
+            print("Erorr:invalid Date Of Birth ")
+        elif not(valid_blood_type): 
+            print("Error:invalid blood type ")
+        else:
+            self.first_name = first_name
+            self.last_name = last_name
+            self.DOB = DOB
+            self.blood_type = blood_type
+            self.phone_number = phone_number
+            
