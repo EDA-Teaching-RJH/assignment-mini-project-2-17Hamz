@@ -1,4 +1,5 @@
 import re 
+import matplotlib.pyplot as plt
 
 class Patient:
     def __init__(self,first_name, last_name, DOB, blood_type, phone_number):
@@ -26,5 +27,10 @@ class Patient:
             self.blood_pressure_history.append(new_blood_pressure)
             if len(self.blood_pressure_history) > 5:
                 self.blood_pressure_history.pop(0) #Replaces oldest value with new one 
+
+    def plot_blood_pressure(self):
+        x_values = range(1, len(self.blood_pressure_history)+1)
+        y_values = self.blood_pressure_history
+        plt.plot(x_values, y_values)
 
             
