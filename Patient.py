@@ -15,4 +15,16 @@ class Patient:
             self.DOB = DOB
             self.blood_type = blood_type
             self.phone_number = phone_number
+            self.blood_pressure_history = []
+            self.current_blood_pressure = None
+
+    def updated_current_blood_pressure (self, new_blood_pressure):
+        if new_blood_pressure < 0: 
+            print("Erorr:invalid Blood Pressure ")
+        else:
+            self.current_blood_pressure = new_blood_pressure
+            self.blood_pressure_history.append(new_blood_pressure)
+            if len(self.blood_pressure_history) > 5:
+                self.blood_pressure_history.pop(0) #Replaces oldest value with new one 
+
             
