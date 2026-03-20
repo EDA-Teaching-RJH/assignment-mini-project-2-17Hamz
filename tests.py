@@ -7,4 +7,9 @@ def test_bp_categories(capsys): #Check that BP catergories are correct
     test_patient.get_blood_pressure_category()
     function_output = capsys.readouterr().out.strip()
     assert function_output == "Your blood pressure is high please seek medical attention"
+    test_patient.updated_current_blood_pressure(90) 
+    test_patient.get_blood_pressure_category()
+    function_output = capsys.readouterr().out.strip()
+    assert function_output == "Your blood pressure is fine" #Assert just make sure test is correct 
+    
     
