@@ -1,11 +1,17 @@
 import re 
 import matplotlib.pyplot as plt
+from datetime import datetime
 
 class Patient:
     def __init__(self,first_name, last_name, DOB, blood_type, phone_number):
         first_name, last_name, DOB, blood_type, phone_number = first_name.strip(), last_name.strip(), DOB.strip().upper(), blood_type.strip(), phone_number.strip()
-        valid_date = re.fullmatch(r"[1-31]/[1-12]/[1-2026]", DOB) #Validating the date of birth.
-        valid_blood_type = re.fullmatch(r"A+|A-|B+|B-|O+|O-|AB+|AB-", blood_type) # Validating the blood type 
+        valid_date = False 
+        try:
+            datetime.strptime(DOB, "%d/%m/%Y") #Validating the date of birth.
+            valid_date = True 
+        except ValueError:
+            pass 
+        valid_blood_type = re.fullmatch(r"(A|B|AB|O)[+-]", blood_type) # Validating the blood type 
         if not(valid_date):
             print("Erorr:invalid Date Of Birth ")
         elif not(valid_blood_type): 
