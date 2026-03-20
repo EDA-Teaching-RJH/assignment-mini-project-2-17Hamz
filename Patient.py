@@ -25,7 +25,7 @@ class Patient:
             self.blood_pressure_history = []
             self.current_blood_pressure = None
 
-    def updated_current_blood_pressure (self, new_blood_pressure):
+    def updated_current_blood_pressure(self, new_blood_pressure):
         if new_blood_pressure < 0: 
             print("Erorr:invalid Blood Pressure ")
         else:
@@ -38,5 +38,15 @@ class Patient:
         x_values = range(1, len(self.blood_pressure_history)+1)
         y_values = self.blood_pressure_history
         plt.plot(x_values, y_values)
+        plt.savefig("BP-chart.png")
 
+    def get_blood_pressure_category(self):
+        if self.current_blood_pressure>140:
+            print("Your blood pressure is high please seek medical attention")
+        elif self.current_blood_pressure>=120:
+            print("Your blood pressure is slighly high")
+        elif self.current_blood_pressure>=90:
+            print("Your blood pressure is fine")
+        else:
+            print("Your blood pressure is too low seek medical attention")
             
