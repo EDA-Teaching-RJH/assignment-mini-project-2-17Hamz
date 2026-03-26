@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from datetime import datetime
 
 class Patient:
-    def __init__(self,first_name, last_name, DOB, blood_type, phone_number):
+    def __init__(self,first_name, last_name, DOB, blood_type, phone_number, blood_pressure_history, current_blood_pressure):
         first_name, last_name, DOB, blood_type, phone_number = first_name.strip(), last_name.strip(), DOB.strip().upper(), blood_type.strip(), phone_number.strip()
         valid_date = False 
         try:
@@ -22,8 +22,8 @@ class Patient:
             self.DOB = DOB
             self.blood_type = blood_type
             self.phone_number = phone_number
-            self.blood_pressure_history = []
-            self.current_blood_pressure = None
+            self.blood_pressure_history = blood_pressure_history
+            self.current_blood_pressure = current_blood_pressure
 
     def updated_current_blood_pressure(self, new_blood_pressure):
         if new_blood_pressure < 0: 
