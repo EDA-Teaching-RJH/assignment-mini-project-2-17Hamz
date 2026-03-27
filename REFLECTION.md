@@ -4,7 +4,7 @@
 * For this assignment, I decided to build a Hospital Management System. This project allowed me to showcase my skills by focusing on the core elements taught in the second half of the module. The system handles patient data, validates medical inputs, tracks blood pressure history, and generates visual medical reports.
 
 
-# How my code links to workshops and lectures during the second half of term 
+## How my code links to workshops and lectures during the second half of term 
 
 **Object-Oriented Programming (OOP) - Lecture/Workshop 9**
 Workshop 9 taught us about Object-Oriented Programming. I used this to make a `Patient` class. Instead of having a messy list of variables, the class uses an `__init__` constructor to organize the patient's name, birthday, blood type, and blood pressure all in one place. I also added methods inside the class, like `get_blood_pressure_category()`, which keeps the main menu code really clean and easy to read.
