@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 from datetime import datetime
 
 class Patient:
-    def __init__(self,first_name, last_name, DOB, blood_type, phone_number, blood_pressure_history, current_blood_pressure):
-        first_name, last_name, DOB, blood_type = first_name.strip(), last_name.strip(), DOB.strip().upper(), blood_type.strip()
+    def __init__(self,first_name, last_name, DOB, blood_type, phone_number):
+        first_name, last_name, DOB, blood_type, phone_number = first_name.strip(), last_name.strip(), DOB.strip().upper(), blood_type.strip(), phone_number.strip()
         valid_date = False 
         try:
             datetime.strptime(DOB, "%d/%m/%Y") #Validating the date of birth.
