@@ -33,7 +33,7 @@ def welcome():
         print("Enter 7 to Quit")
         user_choice = input("Enter a menu option ").strip()
 
-        if user_choice == 1:
+        if user_choice == "1":
             first_name = input("Enter the new user's first name").strip()
             last_name = input("Enter the new user's last name: ").strip()
             phone_number = input("Enter the new user's phone number: ").strip()
